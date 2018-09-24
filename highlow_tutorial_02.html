@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<!-- 
+	Tasks:
+		1. Review the change to the fnRandomNumber function
+		2. Change the range of the random number so that it is between 0 and 100 and test it.
+		3. Review the links provided so that you will be able to find a good source of information about JavaScript librarie in the future; this time the function is given (passed) information, this is a very powerful technique in programming
+		4. Fix the program so that the calling event passes the correct max value
+	-->
+
+	<head> 
+		<title>4COM1037</title>
+		<script>
+			function fnRandomNumber(max) {
+				//this function (a collection of instructions) create a random number
+				var number; //declare a variable called 'number' and dont assign it to any value yet
+				number = Math.random() * max; //this line executes the random function and scales it up based on the max value
+				number = Math.floor(number); //this line executes the floor function essentially rounds down a floating point number into an interger (whole number)
+				alert("The random number was: " + number); //this executes JavaScripts alert box and populates it with the message
+			}
+		</script>
+	</head>
+
+	<body>
+		<button id="button1" onclick="fnRandomNumber(5)">Generate A Random Number Part 2</button>
+		<!-- the button tag is used to create a button on screen and when clicked causes the fnRandomNumber function to be called with a value of 5 -->
+	</body>
+
+</html>

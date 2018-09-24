@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<!-- 
+	Tasks:
+		1. Try to work through this nearly complete example, it introduces the following new functions:
+		return: this can be used to pass information back to the calling instructon
+		if: this can be used to test a condition and if true it will execute a dependent bit of code
+		else: this can be used to execute a different bit of dependent code if the condition being tested was false
+		confirm: this uses the a built-in message box (similar to alert) but includes two buttons
+	-->
+
+	<head> 
+		<title>4COM1037</title>
+		<script>
+			function fnRandomNumber(max) {
+				//this function (a collection of instructions) create a random number
+				var number; //declare a variable called 'number' and dont assign it to any value yet
+				number = Math.random() * max; //this line executes the random function and scales it up based on the max value
+				number = Math.floor(number); //this line executes the floor function essentially rounds down a floating point number into an interger (whole number)
+				return number; //this causes the function to pass a value back to the line that called it
+			}
+
+			function fnHighLow() {
+				//try to work out exactly what this function does and how
+				
+				var number1=fnRandomNumber(100); //call the fnRandomNumber function (passing it the value of 100), then store the return value in the variable called number1
+				var number2=fnRandomNumber(100); //call the fnRandomNumber function (passing it the value of 100), then store the return value in the variable called number1
+
+				//this next section calls the JavaScript confirm box (a message box with two buttons, okay and cancel), we can use those to get information from the users
+				higher=confirm("The first number is: " + number1 + " click okay if you think the second number will be higher")
+				if(higher==true) {
+					//true, the user clicked the okay button so execute these depended instructions
+					alert("You think the number will be higher");
+				} else {
+					//false, the user did not click the okay button (they must have clicked cancel instead), so execute these dependent instructions
+					alert("You think the number will be lower");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<button id="button1" onclick="fnHighLow()">Play High/Low Part 4</button>
+		<!-- this button now calls the fnHighLow function instead of fnRandomNumber -->
+	</body>
+
+</html>

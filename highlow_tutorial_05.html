@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<!-- 
+	Tasks:
+		1. Try to work through this mostly complete example
+		2. It builds on the instructions already used and introduces a global variable, global variables are variables that can be accessed and used anywhere in your program (these can be good and bad, we will discuss them later in the module)
+		3. Use the global variable to keep a score, 10 points should be added for each right answer, -10 should be deducted for each wrong answer
+		4. If not already resolved try to identify and resolve the problem regarding if the numbers are the same
+		5. Once you have solved the score task, try to enhance your program so that if a user has: 
+			a. More than 100 points they get a "You have scored more than 100, excellent work" message
+			b. Less than 40 points they get a "You are terrible at this" message
+	-->
+
+	<head> 
+		<title>4COM1037</title>
+		<script>
+			var score=0; //create a global variable (these are created when they are defined outside a function)
+
+			function fnRandomNumber(max) {
+				//this function (a collection of instructions) create a random number
+				var number; //declare a variable called 'number' and dont assign it to any value yet
+				number = Math.random() * max; //this line executes the random function and scales it up based on the max value
+				number = Math.floor(number); //this line executes the floor function essentially rounds down a floating point number into an interger (whole number)
+				return number; //this causes the function to pass a value back to the line that called it
+			}
+
+			function fnHighLow() {
+				//try to work out exactly what this function does and how
+				
+				var number1=fnRandomNumber(100); //call the fnRandomNumber function (passing it the value of 100), then store the return value in the variable called number1
+				var number2=fnRandomNumber(100); //call the fnRandomNumber function (passing it the value of 100), then store the return value in the variable called number1
+
+				//this next section calls the JavaScript confirm box (a message box with two buttons, okay and cancel), we can use those to get information from the users
+				higher=confirm("The first number is: " + number1 + " click okay if you think the second number will be higher")
+				if(higher==true) {
+					//true, the user clicked the okay button so execute these depended instructions
+					alert("You think the number will be higher");
+					if(number2 > number1) {
+						alert("Correct the second number was: " + number2 + " which was higher than: " + number1);
+					} else {
+						alert("Sorry, the second number was: " + number2 + " which was lower: " + number1);
+					}
+				} else {
+					//false, the user did not click the okay button (they must have clicked cancel instead), so execute these dependent instructions
+					alert("You think the number will be lower");
+					if(number2 < number1) {
+						alert("Correct the second number was: " + number2 + " which was lower: " + number1);
+					} else {
+						alert("Sorry, the second number was: " + number2 + " which was higher: " + number1);
+					}
+				}
+
+				alert("Your current score is: " + score);
+			}
+		</script>
+	</head>
+
+	<body>
+		<button id="button1" onclick="fnHighLow()">Play High/Low Part 5</button>
+		<!-- this button now calls the fnHighLow function instead of fnRandomNumber -->
+	</body>
+
+</html>

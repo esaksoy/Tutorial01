@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<!-- 
+	Tasks:
+		1. Review the program and consider how to update the program so that the alert message reads "The first random number was:" instead of "The random number was: "
+		2. Test your change and fix any errors that may have been introduced
+
+		PS - Don't forget JavaScript is case sensitive, use the console to get details on any errors; this may be a bit like error rage
+	-->
+
+	<head> 
+		<title>4COM1037</title>
+		<script>
+			function fnRandomNumber(max) {
+				//this function (a collection of instructions) create a random number
+				var number; //declare a variable called 'number' and dont assign it to any value yet
+				number = Math.random() * maximum; //this line executes the random function and scales it up based on the max value
+				number = Math.floor(number); //this line executes the floor function essentially rounds down a floating point number into an interger (whole number)
+				alert("The random number was: " + nomber); //this executes JavaScripts alert box and populates it with the message
+			}
+		</script>
+	</head>
+
+	<body>
+		<button id="button1" onclick="fnGenerateNumber(100)">Generate A Random Number Part 3</button>
+		<!-- the button tag is used to create a button on screen and when clicked causes the fnRandomNumber function to be called with a value of 100 -->
+	</body>
+
+</html>
