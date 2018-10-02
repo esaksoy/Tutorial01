@@ -1,6 +1,27 @@
 <!doctype html>
 <html lang="en">
-	<!-- 
+	<!--
+		We have added a new feature to the function fnRandomNumber - in this example we are "passing" information to the function.
+		In the previous version, we had a function that created a random number (initially between 0-10, then after you updated it - between 0-100). We call this type of locked value “hard-coded”.  In essence,
+		we have fixed a bit of data (or parameter) in to the program (or function) in such a way that it cannot be altered without having to manually modify the program source code.  Okay, sure, this is fine - but, if
+		we wanted to (for example) have a random function generate values between 0-10 that would be one function, then if we also needed random numbers between (for example) 0-100 we would need a whole
+		other random number function, then say, we also need (for some reason - okay, I know this is a stretch but this is an illustrative example!!) random numbers between 0-50 (or 0-200, or whatever!) we would
+		need even more additional random functions - that makes (at least) three almost identical/duplicated functions except for different values of the "max" value range!! This is where the ability to "pass" information
+		to a function gives you (the programmer) some awesome powers!!
+
+		"passing" information allows us to give the function data - the ability to give it data makes is a lot more useful, in essence we can now say, "do something with this", rather than simply, "do something".
+		So now, (if we continue the example above) we only need 1 random function - but this time it expects a value (in our case) “max” because when we declared the function “fnRandomNumber(max)” we added,
+		inside the round brackets a name (a variable name “max”) for the that will the function will now expect.  The name (max) can be anything we chose (well mostly, there are some conditions with naming
+		variables - e.g. can’t start with numbers, can’t contain spaces, etc.) the only important bit is that we (if we need the value) have to stick to the same variable name.  As you review the function hopefully
+		this will make sense!
+
+		To summarise, we can now “pass” information to a function and have it “act” on that data rather than it only being able to “act” on “hard-coded” values; oh, before I forget - “data” being passed to a function
+		is sometimes called a “parameter” or “argument”. Values that are locked (e.g. hard-coded) are also sometimes called “constants”.  However, in technical terms, a constant is a locked variable with a locked
+		value as is normally only beneficial to the programmer for improved readability or understanding (e.g. instead of always using the value of 3.14159 - which after a little bit of time could become confusing
+		as to what it means we can create a constant (in essence, a label for the value and use that instead) pi=3.14159.  Now we (in our program) use the label “pi” rather than “3.141…” - true, not a huge difference
+		but trust me on bigger programs it can be really helpful (also, if you need to change the value you only need change the line that defined the value rather than every line that uses the value - now that can
+		really be useful!!).
+
 	Tasks:
 		1. Review the change to the fnRandomNumber function
 		2. Change the range of the random number so that it is between 0 and 100 and test it.
@@ -8,8 +29,8 @@
 		4. Fix the program so that the calling event passes the correct max value
 	-->
 
-	<head> 
-		<title>4COM1037</title>
+	<head>
+		<title>Tutorial 02</title>
 		<script>
 			function fnRandomNumber(max) {
 				//this function (a collection of instructions) create a random number
